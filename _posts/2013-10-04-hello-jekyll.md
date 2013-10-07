@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Github Pages搭建个人博客"
-description: ""
+description: "总结了使用jekyll在github上搭建个人博客的过程，使用了jekyll bootstrap模版，以及该模版提供的主题，后期对主题有进一步的修改"
 category: "jekyll"
 tags: [github, jekyll, git]
 ---
@@ -73,6 +73,18 @@ Disqus为了增强社区氛围增加了这个，去除的方法是：
 1. 在disqus网站上注册登录自己的账号，进去后add site，填上URL，site name, short site name（这一项是disqus网站要求的ID)；
 2. 进入http://"short-name".disqus.com/admin/settings/discovery/ 选择 Just Comments，然后保存；
 3. 在`.\_config.yml`中更改disqus的short-name为刚才在disqus上设置的short site name.
+####编译时有中文错误
+错误：遇到一个`liquid exception: invalid byte sequence in gbk`的错误
+解决：找到Jekyll的目录`D:\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-1.2.1\lib\jekyll`
+找到文件`convertible.rb`把这一句：
+	
+	self.content = File.read(File.join(base, name))
+	
+改成：
+	
+	self.content = File.read(File.join(base, name), :encoding => "utf-8")
+	
+如果有更多调试错误，见[Jekyll 本地调试之若干问题](http://chxt6896.github.io/blog/2012/02/13/blog-jekyll-native.html)
 
 ##参考资料
 Github Pages: [http://pages.github.com/](http://pages.github.com/)   

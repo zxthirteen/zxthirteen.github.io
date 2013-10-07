@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "google-code-prettify高亮Jekyll代码"
-description: ""
+description: "使用google-code-prettify高亮Jekyll代码，使用了比较暗的desert主题，这也是我在vim上最喜欢的主题色"
 category: "jekyll"
 tags: [jekyll, highlight]
 ---
