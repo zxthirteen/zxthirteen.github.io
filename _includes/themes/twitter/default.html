@@ -40,7 +40,16 @@
 			prettyPrint();
 		});
 	</script>
-
+	
+	<!-- search box -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#search-form").submit(function(){
+				var query = document.getElementById("google-search").value;
+				window.open("http://google.com/search?q=" + query+ "%20site:" + "http://zxthirteen.github.io");
+			});
+		});
+	</script>
   </head>
 
   <body>
@@ -48,11 +57,16 @@
       <div class="navbar-inner">
         <div class="container-narrow">
           <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+		  
+		  <form class="navbar-search pull-left" id="search-form">
+			<input type="text" id="google-search" class="search-query" placeholder="Search" />
+		  </form>
           <ul class="nav">
             {% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
           </ul>
+		  
         </div>
       </div>
     </div>
