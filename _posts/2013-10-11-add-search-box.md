@@ -8,7 +8,7 @@ tags: [jekyll, jQuery, search]
 {% include JB/setup %}
 
 本文参考博客[我的jekyll配置和修改](http://blog.javachen.com/post/2013/08/31/my-jekyll-config/)
-和[Create Simple Search box](http://truongtx.me/2012/12/28/jekyll-create-simple-search-box/)，使用了jQuery实现，关于jQurey的用法，最好的javaScritp和jQuery教程见[w3schools](www.w3schools.com)   
+和[Create Simple Search box](http://truongtx.me/2012/12/28/jekyll-create-simple-search-box/)，使用了jQuery实现，关于jQurey的用法，最好的javaScritp和jQuery教程见[w3schools](http://www.w3schools.com)   
 
 
 ####增加search box的html代码

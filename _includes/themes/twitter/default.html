@@ -72,17 +72,49 @@
     </div>
 
     <div class="container-narrow">
-
-      <div class="content">
+	
+      <div class="content" style="width:700px; float:left; padding-top:45px">
         {{ content }}
+		
+		<hr>
+		  <footer>
+			<p style="text-align:center;">&copy;  {{ site.time | date: '%Y' }} Developed by {{ site.author.name }} <br />
+			  with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+			  and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+			</p>
+		  </footer>
       </div style="text-align:center;">
-      <hr>
-      <footer>
-        <p style="text-align:center;">&copy;  {{ site.time | date: '%Y' }} Developed by {{ site.author.name }} <br />
-          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
-        </p>
-      </footer>
+	  
+	  <div class="side">
+        <ul class="nav nav-list affix" id="sidebar">
+          {% assign categories_list = site.categories %}
+          <li class="active nav-header">
+            <a href="#">
+              <h6>Category List</h6>
+            </a>
+          </li>
+          {% for category in categories_list %}
+          <li>
+            <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] }}-ref">
+              {{ category[0] | join: "/" | upcase}}
+              <span>({{ category[1].size }})</span>
+            </a>
+          </li>
+          {% endfor %}
+          <li class="active nav-header">
+            <a href="#">
+              <h6>Recent Posts</h6>
+            </a>
+          </li>
+          {% for post in site.posts offset:0 limit:7 %}
+            {% unless post.draft %}
+          <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+          {% endunless %}
+            {% endfor %}
+        </ul>
+	  </div>
 
     </div>
 

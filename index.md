@@ -14,7 +14,7 @@ tagline: 慢慢回忆，快快写
 no use. end -->
 
 <div class="wrapper">
-	<h3> 最新文章 </h3><br />
+	<h4> 最新文章 </h4><br />
 	<ul class="postsList">{% for post in site.posts limit:10 %}{% include posts-list.html %} {% endfor %}
 	<br />
 	<li><span>{{ site.posts.size }} POSTS</span><a href="/archive.html">查看全部文章</a></li>
