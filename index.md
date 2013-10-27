@@ -13,7 +13,7 @@ tagline: 慢慢回忆，快快写
 </ul>
 no use. end -->
 
-<div class="wrapper">
+<div class="wrapper" style="background-color: #eeeeee">
 	<h4> 最新文章 </h4><br />
 	<ul class="postsList">{% for post in site.posts limit:10 %}{% include posts-list.html %} {% endfor %}
 	<br />
