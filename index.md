@@ -1,7 +1,7 @@
 ---
 layout: page
 title: zxthirteen的博客
-tagline: 慢慢回忆，快快写
+tagline: 
 ---
 {% include JB/setup %}
 
@@ -13,7 +13,7 @@ tagline: 慢慢回忆，快快写
 </ul>
 no use. end -->
 
-<div class="wrapper" style="background-color: #cccccc">
+<div class="wrapper">
 	<h4> 最新文章 </h4><br />
 	<ul class="postsList">{% for post in site.posts limit:10 %}{% include posts-list.html %} {% endfor %}
 	<br />
